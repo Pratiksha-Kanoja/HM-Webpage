@@ -1,0 +1,6 @@
+.abc{
+    background-color: aqua;
+}
+.abc>h1{
+    color: brown;
+}
