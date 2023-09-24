@@ -1,6 +1,6 @@
 #top{
     width: 100%;
-    height: 170px;
+    height: auto;
 }
 #top-nav{
     width: 100%;
@@ -14,19 +14,19 @@
     padding-left: 20px;
 }
 #topnav-left>p{
-    margin-top: 20px;
+    margin-top: 35px;
     margin-right: 15px;
     font-size: 15px;
 }
 #topnav-left>div{
-    margin-top: 18px;
+    margin-top: 33px;
     margin-right: 20px;
     font-size: 24px;
 }
 #topnav-mid{
     width: 5%;
     height: 40px;
-    margin-top: 25px;
+    margin-top: 40px;
 }
 #topnav-mid>img{
     width: 100%;
@@ -43,11 +43,11 @@
     margin-right: 20px;
 }
 .nvaright-icon{
-    margin-top: 20px;
+    margin-top: 35px;
     font-size: 24px;
 }
 #topnav-right>div>p{
-    margin-top: 23px;
+    margin-top: 38px;
     margin-left: 5px;
 }
 
@@ -56,7 +56,7 @@
     width: 100%;
     height: 70px;
     display: flex;
-    /* justify-content: space-between; */
+    margin-top: 25px;
 }
 #bottomnav-left{
     width: 74%;
