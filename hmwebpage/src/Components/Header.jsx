@@ -26,22 +26,18 @@ function Header() {
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/2560px-H%26M-Logo.svg.png" alt="1" />
                 </div>
                 <div id='topnav-right'>
-                    
-                   <div className='sign_in_hide'>
-                        <button>Sign in</button>
-                        <p style={{marginTop:"20px",fontSize:"13px",fontWeight:"500"}}>My account</p>
-                        <p style={{marginTop:"10px",fontSize:"13px",fontWeight:"500"}}>Membership info</p>
-                        <p style={{marginTop:"10px",fontSize:"10px",fontWeight:"500",color:"gray"}}>Not a member yet? Join here!</p>
-                   </div>
-
                     <div id='sign_in'>
                         <div className='nvaright-icon'>
                             <TfiUser />
                         </div>
                         <p>Sign in</p>
                     </div>
-                    
-                   
+                    <div id='sign_in_hide'>
+                        <button>Sign in</button>
+                        <p style={{ marginTop: "20px", fontSize: "13px", fontWeight: "500" }}>My account</p>
+                        <p style={{ marginTop: "10px", fontSize: "13px", fontWeight: "500" }}>Membership info</p>
+                        <p style={{ marginTop: "10px", fontSize: "10px", fontWeight: "500", color: "gray" }}>Not a member yet? Join here!</p>
+                    </div>
                     <div id='fav'>
                         <div className='nvaright-icon'>
                             <AiOutlineHeart />
@@ -49,7 +45,7 @@ function Header() {
 
                         <p>Favourites</p>
                     </div>
-                    
+
                     <div id='shop-bag'>
                         <div className='nvaright-icon'>
                             <BsHandbag />
@@ -57,6 +53,7 @@ function Header() {
 
                         <p>Shopping bag (0)</p>
                     </div>
+
                 </div>
             </div>
             <div id='bottom-nav'>
