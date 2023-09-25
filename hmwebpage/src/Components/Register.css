@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#signin>div{
+    border: 2px solid red;
+    height: 600px;
+    width: 31%;
+    /* margin: auto; */
+    margin-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    background-color: rgb(250,249,248);
+    overflow: scroll;
+}
+#top{
+    display: flex;
+}
+#top>div:nth-child(1){
+    height: 50px;
+    width: 90%;
+    font-size: 30px;
+    margin-left: 30px;
+    font-weight: bold;
+}
+#top>button{
+    height: 44px;
+    width: 40px;
+    padding: 3px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 200;
+    border: none;
+    background-color: rgb(250,249,248);
+}
+#signin>div>p:nth-child(2){
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: gray;
+    margin-top: 5px;
+}
+#signin>div>div:nth-child(3){
+    margin-top: 30px;
+}
+#signin>div>div:nth-child(3)>input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgb(192, 192, 192);
+    margin-top: 10px;
+    background-color: white;
+}
+#signin>div>div:nth-child(3)>p{
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+#birth_date{
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgb(192, 192, 192);
+    margin-top: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+}
+#birth_date>input{
+    height:40px ;
+    width: 7%;
+    border: none;
+    outline: none;
+}
+#birth_date>p{
+    margin-top: 10px;
+    font-size: 12px;
+}
+::placeholder{
+    text-align: center;
+}
+#Add_more{
+    width: 93%;
+    height: 20px;
+    border: 1px solid rgb(192, 192, 192);
+    margin-top: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+#Add_more>p{
+    font-size: 13px;
+}
+
+
+
+
+
+
+#signin>div>button:nth-child(4){
+    width: 100%;
+    height: 40px;
+    margin-top: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background-color: #222222;
+    border: none;
+    outline: none;
+}
+#signin>div>button:nth-child(6){
+    width: 100%;
+    height: 40px;
+    margin-top: 15px;
+    color: #222222;
+    font-size: 15px;
+    font-weight: bold;
+    outline: none;
+    border: 1px solid black;
+    background-color: rgb(250,249,248);
+}
