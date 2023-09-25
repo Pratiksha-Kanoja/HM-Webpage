@@ -38,7 +38,52 @@
     display: flex;
     justify-content: flex-end;
 }
-#topnav-right>div{
+.sign_in_hide{
+    background-color: white;
+    /* border: 1px solid black; */
+    box-shadow: 1px 1px 10px 1px rgb(209, 209, 209);
+    padding: 20px;
+    position: absolute;
+    right: 22%;
+    top: 10%;
+    height: 135px;
+    width: 200px;
+    display: none;
+}
+.sign_in_hide>button{
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    background-color: #222222;
+    border: none;
+    outline: none;
+}
+
+#sign_in{
+    display: flex; 
+    margin-right: 20px;
+} 
+#sign_in:hover + .sign_in_hide {
+    display: block;
+  }
+#sign_in{
+    display: flex; 
+    margin-right: 20px;
+} 
+#sign_in:hover + .sign_in_hide {
+    display: block;
+  }
+/* #topnav-right>div{
+    display: flex; 
+    margin-right: 20px;
+} */
+#fav{
+    display: flex; 
+    margin-right: 20px;
+}
+#shop-bag{
     display: flex; 
     margin-right: 20px;
 }
@@ -64,8 +109,12 @@
     display: flex;
     justify-content: flex-end;
 }
-#bottomnav-left>p{
+#bottomnav-left>button{
     margin-right: 30px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    background-color: white;
 }
 
 #bottomnav-right{
@@ -91,3 +140,5 @@
     color: black;
     padding-top: 10px;
 }
+
+
