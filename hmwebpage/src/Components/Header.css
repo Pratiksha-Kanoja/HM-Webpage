@@ -38,9 +38,16 @@
     display: flex;
     justify-content: flex-end;
 }
-.sign_in_hide{
+
+#sign_in{
+    display: flex; 
+    /* margin-right: 20px; */
+    height: 200px;
+    width: 100px;
+    padding-left: 40px;
+}
+#sign_in_hide{
     background-color: white;
-    /* border: 1px solid black; */
     box-shadow: 1px 1px 10px 1px rgb(209, 209, 209);
     padding: 20px;
     position: absolute;
@@ -50,7 +57,7 @@
     width: 200px;
     display: none;
 }
-.sign_in_hide>button{
+#sign_in_hide>button{
     width: 100%;
     height: 50px;
     font-size: 20px;
@@ -60,25 +67,25 @@
     border: none;
     outline: none;
 }
+#sign_in_hide>button>p:nth-child(1){
+    margin-top: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+#sign_in_hide>button>p:nth-child(2){
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 500;
+}
+#sign_in_hide>button>p:nth-child(3){
+    margin-top: 10px;
+    font-size: 10px;
+    font-weight: 500;
+}
+#sign_in:hover + #sign_in_hide{
+    display: block;
+}
 
-#sign_in{
-    display: flex; 
-    margin-right: 20px;
-} 
-#sign_in:hover + .sign_in_hide {
-    display: block;
-  }
-#sign_in{
-    display: flex; 
-    margin-right: 20px;
-} 
-#sign_in:hover + .sign_in_hide {
-    display: block;
-  }
-/* #topnav-right>div{
-    display: flex; 
-    margin-right: 20px;
-} */
 #fav{
     display: flex; 
     margin-right: 20px;
