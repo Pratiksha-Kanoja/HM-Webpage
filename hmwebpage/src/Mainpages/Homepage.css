@@ -176,7 +176,7 @@
 }
 
 #wins{
-    width: 70%;
+    width: 65%;
     height: 150px;
     margin: auto;
     margin-bottom: 20px;
@@ -221,7 +221,7 @@
     margin-bottom: 20px;
 }
 #popular_categories>div:nth-child(1){
-    width: 70%;
+    width: 65%;
     height:220px;
 }
 #popular_categories>div:nth-child(1)>h3{
@@ -250,13 +250,13 @@
     padding: 0px 12px;
 }
 #popular_categories>div:nth-child(2){
-    width: 14%;
+    width: 16.5%;
     padding-top: 100px;
     padding-left: 10px;
 }
 
 #Studio{
-    width: 70%;
+    width: 65%;
     height: 150px;
     margin: auto;
     margin-bottom: 20px;
@@ -293,7 +293,7 @@
     outline: none;
 }
 #new_arrivals{
-    width: 70%;
+    width: 65%;
     height: 500px;
     margin: auto;
     margin-bottom: 20px;
@@ -315,7 +315,7 @@
     margin-top: 15px;
 }
 .na-img{
-    width: 22%;
+    width: 23%;
     height: 390px;
 }
 .na-img>div{
@@ -355,7 +355,7 @@
     text-decoration: underline;
 }
 #magzine>div{
-    width: 70%;
+    width: 65%;
     margin: auto;
     height: 350px;
     margin-top: 70px;
