@@ -2,11 +2,11 @@
     padding: 0;
     margin: 0;
 }
-#signin>div{
-    border: 2px solid red;
+#register>div{
+    border: 1px solid gray;
     height: 600px;
     width: 31%;
-    /* margin: auto; */
+    margin: auto;
     margin-top: 30px;
     padding-left: 30px;
     padding-right: 30px;
@@ -15,17 +15,17 @@
     background-color: rgb(250,249,248);
     overflow: scroll;
 }
-#top{
+#register_top{
     display: flex;
 }
-#top>div:nth-child(1){
+#register_top>div:nth-child(1){
     height: 50px;
     width: 90%;
     font-size: 30px;
     margin-left: 30px;
     font-weight: bold;
 }
-#top>button{
+#register_top>button{
     height: 44px;
     width: 40px;
     padding: 3px;
@@ -35,24 +35,24 @@
     border: none;
     background-color: rgb(250,249,248);
 }
-#signin>div>p:nth-child(2){
+#register>div>p:nth-child(2){
     font-size: 12px;
     text-align: center;
     font-weight: bold;
     color: gray;
     margin-top: 5px;
 }
-#signin>div>div:nth-child(3){
+#register>div>div:nth-child(3){
     margin-top: 30px;
 }
-#signin>div>div:nth-child(3)>input{
+#register>div>div:nth-child(3)>input{
     width: 100%;
     height: 40px;
     border: 1px solid rgb(192, 192, 192);
     margin-top: 10px;
     background-color: white;
 }
-#signin>div>div:nth-child(3)>p{
+#register>div>div:nth-child(3)>p{
     margin-bottom: 10px;
     font-size: 13px;
 }
@@ -97,7 +97,7 @@
 
 
 
-#signin>div>button:nth-child(4){
+#register>div>button:nth-child(4){
     width: 100%;
     height: 40px;
     margin-top: 30px;
@@ -108,7 +108,7 @@
     border: none;
     outline: none;
 }
-#signin>div>button:nth-child(6){
+#register>div>button:nth-child(6){
     width: 100%;
     height: 40px;
     margin-top: 15px;
