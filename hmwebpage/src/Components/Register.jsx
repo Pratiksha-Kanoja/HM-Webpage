@@ -6,25 +6,25 @@ function Register() {
             {/* <div>
 
             </div> */}
-            <div id="signin">
+            <div id="register">
                 <div>
-                    <div id='top'>
+                    <div id='register_top'>
                         <div>BECOME A MEMBER</div>
                         <button>X</button>
                     </div>
                     <p>Become a member — don’t miss out on deals, offers, discounts and bonus vouchers.</p>
                     <div>
-                        <label htmlFor="email">Email <span style={{ color: "red" }}>*</span></label>
+                        <label htmlFor="email" style={{ fontSize:"15px" }}>Email <span style={{ color: "red" }}>*</span></label>
                         <br />
                         <input type="email" style={{ marginBottom: "15px" }} />
                         <br />
-                        <label htmlFor="password">Create a Password <span style={{ color: "red" }}>*</span></label>
+                        <label htmlFor="password" style={{ fontSize:"15px" }}>Create a Password <span style={{ color: "red" }}>*</span></label>
                         <br />
                         <input type="password" />
 
                         <p>8 characters 1 lowercase 1 uppercase 1 number</p>
 
-                        <label htmlFor="date">Date of birth <span style={{ color: "red" }}>*</span></label>
+                        <label htmlFor="date" style={{ fontSize:"15px" }}>Date of birth <span style={{ color: "red" }}>*</span></label>
                         <br />
                         <div id='birth_date'>
                             <input type="text" placeholder='DD' />
