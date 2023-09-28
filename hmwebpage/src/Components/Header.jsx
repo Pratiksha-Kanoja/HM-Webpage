@@ -5,12 +5,16 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { BsHandbag } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-function Header() {
+import Login from './Login';
+function Header({active,setActive}) {
     const router = useNavigate();
     function routerToMen() {
         router("/Men")
     }
-    return (
+    function openItem() {
+        setActive(true);
+      }
+    return (     
         <div id='top'>
             <div id='top-nav'>
                 <div id='topnav-left'>
@@ -33,7 +37,8 @@ function Header() {
                         <p>Sign in</p>
                     </div>
                     <div id='sign_in_hide'>
-                        <button>Sign in</button>
+                        <button onClick={openItem}>Sign in</button>
+                        {active && <div><Login active={active} setActive={setActive}/></div>}
                         <p style={{ marginTop: "20px", fontSize: "13px", fontWeight: "500" }}>My account</p>
                         <p style={{ marginTop: "10px", fontSize: "13px", fontWeight: "500" }}>Membership info</p>
                         <p style={{ marginTop: "10px", fontSize: "10px", fontWeight: "500", color: "gray" }}>Not a member yet? Join here!</p>
