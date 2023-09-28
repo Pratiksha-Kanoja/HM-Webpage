@@ -1,15 +1,18 @@
 import './Login.css'
-function Login() {
+function Login({active,setActive}) {
+    function closeItem() {
+      setActive(false);
+    }
     return (
-        <div>
-            {/* <div>
+        <div id='login_container'>
+            <div>
 
-            </div> */}
-            <div id="signin">
+            </div>
+            <div id="login">
                 <div>
-                    <div id='top'>
+                    <div id='login_top'>
                         <div>Sign in</div>
-                        <button>X</button>
+                        <button onClick={closeItem}>X</button>
                     </div>
                     <p>Become a member — don’t miss out on deals, offers, discounts and bonus vouchers.</p>
                     <div>
