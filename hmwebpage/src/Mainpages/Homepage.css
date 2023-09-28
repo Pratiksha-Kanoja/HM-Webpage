@@ -1,3 +1,4 @@
+
 #extra-info{
     width: 60%;
     margin: auto;
@@ -12,14 +13,11 @@
 #extra-info>p{
     font-size: 13px;
 }
-#first_img{
-    position: relative;
-}
 #first_img>div:nth-child(1){
     width: 10%;
     height: 40px;
     position: absolute;
-    top: 200px;
+    top: 400px;
     left: 48%;
     background-color: rgb(43, 43, 43);
     color: white;
@@ -34,12 +32,12 @@
     font-size: 35px;
     font-weight: bold;
     position: absolute;
-    bottom: 150px;
+    bottom: 50px;
     left: 31%;
 }
 #first_img>div:nth-child(3)>button{
     position: absolute;
-    bottom: 80px;
+    bottom: 0px;
     left: 46%;
     height: 40px;
     width: 100px;
