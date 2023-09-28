@@ -5,10 +5,10 @@ import Images from '../Img/Img';
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { BsArrowRight } from "react-icons/bs";
 import './Homepage.css'
-function Homepage() {
+function Homepage({active,setActive}) {
     return (
-        <div className={"container"}>
-            <Header /> {/*this is header Component which we access here */}
+        <div id="Container">
+            <Header active={active} setActive={setActive}/> {/*this is header Component which we access here */}
 
 
 
