@@ -2,10 +2,10 @@ import './Register.css'
 import { RiArrowDownSLine } from "react-icons/ri";
 function Register() {
     return (
-        <div>
-            {/* <div>
+        <div id='register_container'>
+            <div>
 
-            </div> */}
+            </div>
             <div id="register">
                 <div>
                     <div id='register_top'>
