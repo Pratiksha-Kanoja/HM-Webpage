@@ -1,0 +1,167 @@
+#Singleproduct_Container{
+    width: 100%;
+    height: auto;
+}
+
+#Singleproduct_body{
+    /* border: 2px solid green; */
+    width: 100%;
+    height: auto;
+}
+#Singleproduct_link{
+    display: flex;
+    justify-content: center;
+}
+#Singleproduct_link>button{
+    outline: none;
+    border: none;
+    background-color: white;
+}
+#Singleproduct_link>button:hover{
+    color: red;
+}
+#Singleproduct_link>button:nth-child(5){
+    color: red;
+}
+#Sp-product{
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+}
+#Sp_product-left{
+    width: 58.5%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#Sp_product-left>div{
+    width: 49.7%;
+    height: 650px;
+    margin-bottom: 10px;
+}
+#Sp_product-left>div>img{
+    width: 100%;
+    height: 100%;
+}
+
+#Sp_product-right{
+    width: 35%;
+    height: 800px;
+    position: sticky;
+    top: -90px;
+
+}
+#Sp_product-right>div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+#Sp_product-right>div:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+#Sp_product-right>h5{
+    margin-top: 20px;
+}
+#t-shirt_color{
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+#t-shirt_color>button{
+    width: 32%;
+    height: 80px;
+    outline: none;
+    border: none;
+}
+#t-shirt_color>button>img{
+    width: 100%;
+    height: 100%;
+}
+#Sp_product-right>div:nth-child(5)>p{
+    margin-top: 30px;
+    font-size: 12px;
+    font-weight: 500;
+}
+#Sp_product-right>div:nth-child(5)>div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#Sp_product-right>div:nth-child(5)>div>button{
+    width: 19%;
+    height: 45px;
+    background-color: white;
+    border: 1px solid gray;
+    font-size: 15px;
+    margin-top: 10px;
+}
+#Sp_product-right>div:nth-child(6)>p{
+    margin-top: 30px;
+    font-size: 12px;
+    font-weight: 500;
+}
+#Sp_product-right>div:nth-child(6)>button{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    background-color: rgb(26, 26, 55);
+    color:white;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+#Sp_product-right>div:nth-child(7){
+    margin-top: 30px;
+}
+#Sp_product-right>div:nth-child(7)>h4{
+    text-align: center;
+    margin-top: 20px;
+}
+#Sp_product-right>div:nth-child(8){
+    margin-top: 50px;
+}
+#Sp_product-right>div:nth-child(9){
+    margin-top: 30px;
+   
+}
+#Sp_product-right>div:nth-child(9)>div{
+    display: flex;
+    justify-content: space-between;
+    border-top:  1px solid rgb(192, 192, 192);
+    padding: 15px 20px;
+    font-weight: bold;
+
+}
+
+#style_with{
+    width: 80%;
+    margin: auto;
+    margin-top: 250px;
+    margin-bottom: 50px;
+}
+#Stylewith_img{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+#Stylewith_img>div{
+    width: 23%;
+    height: 500px;
+}
+#Stylewith_img>div>img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+#Stylewith_img>div>p{
+    font-size: 13px;
+    font-weight: 500;
+}
