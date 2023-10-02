@@ -12,10 +12,14 @@ function Header() {
     function routerToMen() {
         router("/Men")
     }
+    function routerToShopbag(){
+        router("/cart")
+    }
     const [active,setActive]=useState(false)
     function openItem() {
         setActive(true);
       }
+
     return (     
         <div id='top'>
             <div id='top-nav'>
@@ -53,13 +57,12 @@ function Header() {
                         <p>Favourites</p>
                     </div>
 
-                    <div id='shop-bag'>
-                        <div className='nvaright-icon'>
+                    <button id='shop-bag' onClick={routerToShopbag}>
+                        <div>
                             <BsHandbag />
                         </div>
-
                         <p>Shopping bag (0)</p>
-                    </div>
+                    </button>
 
                 </div>
             </div>
