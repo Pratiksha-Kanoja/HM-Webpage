@@ -5,15 +5,23 @@ import { BsHeart,BsInfoCircle,BsStarHalf,BsStarFill,BsChevronDown } from "react-
 import { TfiRulerAlt } from "react-icons/tfi";
 import { HiOutlineShoppingBag, HiOutlineBuildingStorefront } from "react-icons/hi2";
 import { AiFillStar } from "react-icons/ai";
+import { useNavigate } from 'react-router-dom';
 
 function Singleproduct() {
+    const router = useNavigate()
+    function backToHomepage(){
+        router('/')
+    }
+    function backToMen(){
+        router('/Men')
+    }
     return (
         <div id='Singleproduct_Container'>
             <Header />
             <div id='Singleproduct_body'>
                 <div id='Singleproduct_link'>
-                    <button>HM.com <span style={{ marginRight: "5px" }}>/</span></button>
-                    <button>Men <span style={{ marginRight: "5px" }}>/</span></button>
+                    <button onClick={backToHomepage}>HM.com <span style={{ marginRight: "5px" }}>/</span></button>
+                    <button onClick={backToMen}>Men <span style={{ marginRight: "5px" }}>/</span></button>
                     <button>T-shirts & Tops <span style={{ marginRight: "5px" }}>/</span></button>
                     <button>Long Sleeve <span style={{ marginRight: "5px" }}>/</span></button>
                     <button> Relaxed Fit Jersey top</button>
