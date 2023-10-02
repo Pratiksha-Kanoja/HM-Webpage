@@ -7,7 +7,7 @@ import { BsArrowRight } from "react-icons/bs";
 import './Homepage.css'
 function Homepage() {
     return (
-        <div id="Container">
+        <div id="Homepage_Container">
             <Header/> {/*this is header Component which we access here */}
 
 
