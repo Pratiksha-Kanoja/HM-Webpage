@@ -6,11 +6,13 @@ import { BsHandbag } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import Login from './Login';
-function Header({active,setActive}) {
+import { useState } from 'react';
+function Header() {
     const router = useNavigate();
     function routerToMen() {
         router("/Men")
     }
+    const [active,setActive]=useState(false)
     function openItem() {
         setActive(true);
       }
