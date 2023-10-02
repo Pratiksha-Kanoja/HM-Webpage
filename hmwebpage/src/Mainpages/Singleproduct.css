@@ -4,7 +4,7 @@
 }
 
 #Singleproduct_body{
-    /* border: 2px solid green; */
+    background-color: rgb(250, 249, 248);
     width: 100%;
     height: auto;
 }
@@ -15,7 +15,7 @@
 #Singleproduct_link>button{
     outline: none;
     border: none;
-    background-color: white;
+    background-color: rgb(250, 249, 248);
 }
 #Singleproduct_link>button:hover{
     color: red;
