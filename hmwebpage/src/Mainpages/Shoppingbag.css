@@ -124,9 +124,9 @@
 }
 #product_details>div:nth-child(5)>div:nth-child(1){
     border: 1px solid black;
-    width: 15%;
-    height: 19px;
-    padding: 14px;
+    width: 21%;
+    height: 23px;
+    padding: 12px;
 }
 #product_details>div:nth-child(5)>div:nth-child(2){
     border: 1px solid rgb(198, 198, 198);
@@ -237,16 +237,23 @@
 #shopbag_suggest>div>div{
     width: 14.5%;
     height: 300px;
+    position: relative;
 }
 #shopbag_suggest>div>button{
     width: 14.5%;
     height: 250px;
-    background-color: white;
+    background-color: rgb(250, 249, 248);
     border: none;
     outline: none;
+    position: relative;
 }
 #shopbag_suggest>div>button>img{
     width: 100%;
+}
+#shopbag_suggest>div>button>div{
+    position: absolute;
+    bottom: 29px;
+    left: 115px;
 }
 #shopbag_suggest>div>button>p{
     font-size: 12px;
@@ -255,7 +262,15 @@
 #shopbag_suggest>div>div>img{
     width: 100%;
 }
+#shopbag_suggest>div>div>div{
+    position: absolute;
+    bottom: 80px;
+    left: 115px;
+}
 #shopbag_suggest>div>div>p{
     font-size: 12px;
     font-weight: 500;
+}
+.select_item-heart{
+    margin-top: 0px;
 }
