@@ -2,15 +2,16 @@ import './Shoppingbag.css'
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { RiDeleteBin5Line } from "react-icons/ri";
-import { BsHeart, BsChevronDown,BsBox } from "react-icons/bs";
+import { BsHeart, BsChevronDown, BsBox } from "react-icons/bs";
 import { MdArrowForwardIos } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
+import Heart_icon from '../Components/Heart_Icon';
 function Shoppingbag() {
     const router = useNavigate();
-    function GoToSingleproduct(){
+    function GoToSingleproduct() {
         router("/cart/Productpage.1021953016")
     }
-    function backToHomepage(){
+    function backToHomepage() {
         router('/')
     }
     return (
@@ -63,8 +64,8 @@ function Shoppingbag() {
                                     </div>
                                 </div>
                                 <div>
-                                    <div>
-                                        <BsHeart style={{ fontSize: "20px", color: "gray" }} />
+                                    <div className='select_item-heart'>
+                                        <Heart_icon />
                                     </div>
                                     <div>
                                         <p>1</p>
@@ -107,8 +108,8 @@ function Shoppingbag() {
                                     </div>
                                 </div>
                                 <div>
-                                    <div>
-                                        <BsHeart style={{ fontSize: "20px", color: "gray" }} />
+                                    <div className='select_item-heart'>
+                                        <Heart_icon />
                                     </div>
                                     <div>
                                         <p>1</p>
@@ -151,8 +152,8 @@ function Shoppingbag() {
                                     </div>
                                 </div>
                                 <div>
-                                    <div>
-                                        <BsHeart style={{ fontSize: "20px", color: "gray" }} />
+                                    <div className='select_item-heart'>
+                                        <Heart_icon />
                                     </div>
                                     <div>
                                         <p>1</p>
@@ -195,8 +196,8 @@ function Shoppingbag() {
                                     </div>
                                 </div>
                                 <div>
-                                    <div>
-                                        <BsHeart style={{ fontSize: "20px", color: "gray" }} />
+                                    <div className='select_item-heart'>
+                                        <Heart_icon />
                                     </div>
                                     <div>
                                         <p>1</p>
@@ -239,8 +240,8 @@ function Shoppingbag() {
                                     </div>
                                 </div>
                                 <div>
-                                    <div>
-                                        <BsHeart style={{ fontSize: "20px", color: "gray" }} />
+                                    <div className='select_item-heart'>
+                                        <Heart_icon />
                                     </div>
                                     <div>
                                         <p>1</p>
@@ -285,9 +286,9 @@ function Shoppingbag() {
                             <p>You will get prompted to become a member if you're not already a member and you have a member priced item in your shopping bag</p>
                         </div>
                         <div>
-                            <div><BsBox/></div>
+                            <div><BsBox /></div>
                             <div>Delivery and return options</div>
-                            <div><MdArrowForwardIos/></div>
+                            <div><MdArrowForwardIos /></div>
                         </div>
                     </div>
                 </div>
@@ -297,34 +298,52 @@ function Shoppingbag() {
                     <div>
                         <div>
                             <img src="https://lp2.hm.com/hmgoepprod?set=source[/01/bb/01bbaf835957666cffee162d6ef257b6913f77ce.jpg],origin[dam],category[men_accessories_jewellery],type[DESCRIPTIVESTILLLIFE],res[z],hmver[2]&call=url[file:/product/main]" alt="1" />
+                            <div className='select_item-heart'>
+                                <Heart_icon />
+                            </div>
                             <p>4-pack bracelets</p>
                             <p>Rs.699.00</p>
-                            <p style={{marginTop:"10px"}}>Member price Rs.599.00</p>
+                            <p style={{ marginTop: "10px" }}>Member price Rs.599.00</p>
                         </div>
                         <button onClick={GoToSingleproduct}>
                             <img src="https://lp2.hm.com/hmgoepprod?set=source[/b2/9d/b29dea35185ac2a9caae0915dc60286fe6a8cfa9.jpg],origin[dam],category[men_tshirtstanks_longsleeve],type[DESCRIPTIVESTILLLIFE],res[z],hmver[2]&call=url[file:/product/main]" alt="2" />
+                            <div className='select_item-heart'>
+                                <Heart_icon />
+                            </div>
                             <p>Relaxed Fit Jersey top</p>
                             <p>Rs.1,499.00</p>
                         </button>
                         <div>
                             <img src="https://lp2.hm.com/hmgoepprod?set=source[/f4/66/f4665deecea65f2c98e507f8442d2f530d703b90.jpg],origin[dam],category[men_tshirtstanks_longsleeve],type[DESCRIPTIVESTILLLIFE],res[z],hmver[2]&call=url[file:/product/main]" alt="3" />
+                            <div className='select_item-heart'>
+                                <Heart_icon />
+                            </div>
                             <p>Relaxed Fit Jersey top</p>
                             <p>Rs.1,499.00</p>
                         </div>
                         <div>
                             <img src="https://lp2.hm.com/hmgoepprod?set=source[/6e/34/6e34b68ebc85708bee5f71444f237b7b52b9dbd6.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[z],hmver[2]&call=url[file:/product/main]" alt="4" />
+                            <div className='select_item-heart'>
+                                <Heart_icon />
+                            </div>
                             <p>2-pack necklaces</p>
                             <p>Rs.799.00</p>
-                            <p style={{marginTop:"10px"}}>Member price Rs.679.00</p>
+                            <p style={{ marginTop: "10px" }}>Member price Rs.679.00</p>
                         </div>
                         <div>
                             <img src="https://lp2.hm.com/hmgoepprod?set=source[/aa/8c/aa8c5f39248251a29e9965075e04670746e8a598.jpg],origin[dam],category[men_accessories_jewellery],type[DESCRIPTIVESTILLLIFE],res[z],hmver[2]&call=url[file:/product/main]" alt="5" />
+                            <div className='select_item-heart'>
+                                <Heart_icon />
+                            </div>
                             <p>4-pack bracelets</p>
                             <p>Rs.699.00</p>
-                            <p style={{marginTop:"10px",fontSize:"10px"}}>New Arrival</p>
+                            <p style={{ marginTop: "10px", fontSize: "10px" }}>New Arrival</p>
                         </div>
                         <div>
                             <img src="https://lp2.hm.com/hmgoepprod?set=source[/ba/75/ba75709f8b00ed2fb7990d1eac67f7fd977bb07d.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[z],hmver[2]&call=url[file:/product/main]" alt="6" />
+                            <div className='select_item-heart'>
+                                <Heart_icon />
+                            </div>
                             <p>Loose Fit T-shirt</p>
                             <p>Rs.799.00</p>
                         </div>
