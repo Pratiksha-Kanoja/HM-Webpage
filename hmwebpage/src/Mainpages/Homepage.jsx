@@ -9,9 +9,6 @@ function Homepage() {
     return (
         <div id="Homepage_Container">
             <Header/> {/*this is header Component which we access here */}
-
-
-
             <div id="extra-info">
                 <p>Members get free shipping above Rs.1999</p>
                 <p>Free & flexible 15 days return</p>
