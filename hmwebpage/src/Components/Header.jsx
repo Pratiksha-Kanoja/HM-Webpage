@@ -6,21 +6,24 @@ import { BsHandbag } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import Login from './Login';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../Context/AuthContext';
 function Header() {
     const router = useNavigate();
     function routerToMen() {
         router("/Men")
     }
-    function routerToShopbag(){
+    function routerToShopbag() {
         router("/cart")
     }
-    const [active,setActive]=useState(false)
+    const [active, setActive] = useState(false)
     function openItem() {
         setActive(true);
-      }
+    }
 
-    return (     
+    const { state, Logout } = useContext(AuthContext)
+
+    return (
         <div id='top'>
             <div id='top-nav'>
                 <div id='topnav-left'>
@@ -36,19 +39,39 @@ function Header() {
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/2560px-H%26M-Logo.svg.png" alt="1" />
                 </div>
                 <div id='topnav-right'>
-                    <div id='sign_in'>
-                        <div className='nvaright-icon'>
-                            <TfiUser />
+                    {state?.user ?
+                        <div>
+                            <div id='sign_out' >
+                                <div style={{ display: "flex" }}>
+                                    <div className='nvaright-icon'>
+                                        <TfiUser />
+                                    </div>
+                                    <p onClick={Logout} style={{ marginTop: "35px" }}>Signout</p>
+                                </div>
+                                <div>
+                                    <p>{state?.user?.email[0]}</p>
+                                </div>
+                            </div>
                         </div>
-                        <p>Sign in</p>
-                    </div>
-                    <div id='sign_in_hide'>
-                        <button onClick={openItem}>Sign in</button>
-                        {active && <div><Login active={active} setActive={setActive}/></div>}
-                        <p style={{ marginTop: "20px", fontSize: "13px", fontWeight: "500" }}>My account</p>
-                        <p style={{ marginTop: "10px", fontSize: "13px", fontWeight: "500" }}>Membership info</p>
-                        <p style={{ marginTop: "10px", fontSize: "10px", fontWeight: "500", color: "gray" }}>Not a member yet? Join here!</p>
-                    </div>
+                        :
+                        <div>
+                            <div id='sign_in'>
+                                <div style={{ display: "flex" }}>
+                                    <div className='nvaright-icon'>
+                                        <TfiUser />
+                                    </div>
+                                    <p style={{ marginTop: "35px" }}>Sign in</p>
+                                </div>
+                            </div>
+                            <div id='sign_in_hide'>
+                                <button onClick={openItem}>Sign in</button>
+                                {active && <div><Login active={active} setActive={setActive} /></div>}
+                                <p style={{ marginTop: "20px", fontSize: "13px", fontWeight: "500" }}>My account</p>
+                                <p style={{ marginTop: "10px", fontSize: "13px", fontWeight: "500" }}>Membership info</p>
+                                <p style={{ marginTop: "10px", fontSize: "10px", fontWeight: "500", color: "gray" }}>Not a member yet? Join here!</p>
+                            </div>
+                        </div>
+                    }
                     <div id='fav'>
                         <div className='nvaright-icon'>
                             <AiOutlineHeart />

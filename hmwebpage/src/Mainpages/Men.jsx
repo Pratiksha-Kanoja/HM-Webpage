@@ -15,6 +15,9 @@ function Men() {
     function routerToMen() {
         router("/Men")
     }
+    function routerToNewarrival(){
+        router("/products")
+    }
     return (
         <div id='Container'>
             <Header />
@@ -31,7 +34,7 @@ function Men() {
                     <div>
                         <p>New Arrivals</p>
                         <p>View All</p>
-                        <p>Clothes</p>
+                        <p onClick={routerToNewarrival}>Clothes</p>
                         <p>Shoes & Accessories</p>
                     </div>
                     <div>

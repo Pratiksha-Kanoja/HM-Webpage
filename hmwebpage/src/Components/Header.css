@@ -41,12 +41,28 @@
     justify-content: flex-end;
 }
 
+#sign_out{
+    display: flex; 
+    margin-right: 20px;
+    height: 100px;
+    width: 120px;
+    justify-content: space-between;
+}
+#sign_out>div:nth-child(2){
+    margin-top: 30px;
+    border: 1px solid black;
+    font-size: 20px;
+    text-align: center;
+    width: 28px;
+    height: 30px;
+    border-radius: 50%;
+}
+
 #sign_in{
     display: flex; 
-    /* margin-right: 20px; */
     height: 100px;
     width: 100px;
-    padding-left: 40px;
+    justify-content: space-between;
 }
 #sign_in_hide{
     background-color: white;

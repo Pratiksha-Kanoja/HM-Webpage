@@ -2,7 +2,7 @@ import './Shoppingbag.css'
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { RiDeleteBin5Line } from "react-icons/ri";
-import { BsHeart, BsChevronDown, BsBox } from "react-icons/bs";
+import { BsChevronDown, BsBox } from "react-icons/bs";
 import { MdArrowForwardIos } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 import Heart_icon from '../Components/Heart_Icon';

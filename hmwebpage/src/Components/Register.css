@@ -3,21 +3,19 @@
     margin: 0;
 }
 
-#register_container>div:nth-child(1){
-    border: 2px solid red;
-    width: 600%;
-    height: 740px;
+.register_container>div:nth-child(1){
+    width: 100%;
+    height: 800px;
     background-color: black;
     opacity: 0.7;
     position: absolute;
-    right: -320px;
     top: -75px;
 }
 
-#register>div{
+.register>div{
     border: 1px solid gray;
     height: 600px;
-    width: 180%;
+    width: 30%;
     margin-top: 30px;
     padding-left: 30px;
     padding-right: 30px;
@@ -26,20 +24,22 @@
     background-color: rgb(250,249,248);
     overflow: scroll;
     position: absolute;
-    top: -60px;
-    left: -380px;
+    top: 10px;
+    right: 450px;
+    /* left: -10px; */
+    /* right: -100px; */
 }
-#register_top{
+.register_top{
     display: flex;
 }
-#register_top>div:nth-child(1){
+.register_top>div:nth-child(1){
     height: 50px;
     width: 90%;
     font-size: 30px;
     margin-left: 30px;
     font-weight: bold;
 }
-#register_top>button{
+.register_top>button{
     height: 44px;
     width: 40px;
     padding: 3px;
@@ -49,50 +49,56 @@
     border: none;
     background-color: rgb(250,249,248);
 }
-#register>div>p:nth-child(2){
+.register>div>p:nth-child(2){
     font-size: 12px;
     text-align: center;
     font-weight: bold;
     color: gray;
     margin-top: 5px;
 }
-#register>div>div:nth-child(3){
+.register_form{
     margin-top: 30px;
 }
-#register>div>div:nth-child(3)>input{
+.register_form>div:nth-child(1)>input{
     width: 100%;
     height: 40px;
     border: 1px solid rgb(192, 192, 192);
     margin-top: 10px;
     background-color: white;
 }
-#register>div>div:nth-child(3)>p{
+.register_form>div:nth-child(1)>label{
+    font-size: 15px;
+}
+.register_form>div:nth-child(1)>p{
     margin-bottom: 10px;
     font-size: 13px;
 }
-#birth_date{
+.birth_date{
     width: 100%;
-    height: 40px;
-    border: 1px solid rgb(192, 192, 192);
+    height:auto;
     margin-top: 10px;
-    background-color: white;
-    display: flex;
-    justify-content: space-around;
+    margin-bottom: 10px;
 }
-#birth_date>input{
+.birth_date>input{
     height:40px ;
-    width: 7%;
-    border: none;
+    width: 100%;
     outline: none;
+    border: 1px solid rgb(192, 192, 192);
+    background-color: white;
 }
-#birth_date>p{
-    margin-top: 10px;
-    font-size: 12px;
-}
-::placeholder{
+.birth_date>input[type="text"]::placeholder {
+    font-size: 15px;
+    color: gray;
+    content: '\00a0'; /* Unicode for a non-breaking space */
+    letter-spacing: 1em; /* Adjust the value based on the desired gap */
     text-align: center;
 }
-#Add_more{
+.birth_date>p{
+    font-size: 12px;
+}
+
+
+.Add_more{
     width: 93%;
     height: 20px;
     border: 1px solid rgb(192, 192, 192);
@@ -102,16 +108,34 @@
     justify-content: space-between;
     padding: 15px;
 }
-#Add_more>p{
+.Add_more>p{
     font-size: 13px;
 }
-
-
-
-
-
-
-#register>div>button:nth-child(4){
+.register_form>div:nth-child(4)>label{
+    margin-left:10px ;
+    font-size: 13px;
+}
+.register_form>div:nth-child(4)>p{
+    margin-left: 22px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.register_form>div:nth-child(5)>p:nth-child(1){
+    margin-top: 15px;
+    font-size: 12px;
+    color: gray;
+}
+.register_form>div:nth-child(5)>p:nth-child(2){
+    color: gray;
+    text-decoration: underline;
+    font-size: 13px;
+}
+.register_form>div:nth-child(5)>p:nth-child(3){
+    color: gray;
+    font-size: 12px;
+    margin-top: 10px;
+}
+.register_form>div:nth-child(6)>button{
     width: 100%;
     height: 40px;
     margin-top: 30px;
@@ -122,14 +146,15 @@
     border: none;
     outline: none;
 }
-#register>div>button:nth-child(6){
+.register_form>div:nth-child(6)>div{
     width: 100%;
-    height: 40px;
+    height: 30px;
     margin-top: 15px;
     color: #222222;
     font-size: 15px;
     font-weight: bold;
-    outline: none;
     border: 1px solid black;
     background-color: rgb(250,249,248);
+    text-align: center;
+    padding-top: 10px;
 }

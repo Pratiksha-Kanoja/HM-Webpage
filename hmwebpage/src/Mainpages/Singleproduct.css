@@ -52,7 +52,7 @@
     width: 35%;
     height: 800px;
     position: sticky;
-    top: -90px;
+    top: -140px;
 
 }
 #Sp_product-right>div:nth-child(1){
@@ -70,15 +70,15 @@
 }
 #t-shirt_color{
     display: flex;
-    width: 35%;
-    justify-content: space-between;
+    width: auto;
     margin-top: 20px;
 }
 #t-shirt_color>button{
-    width: 32%;
+    width: 55px;
     height: 80px;
     outline: none;
     border: none;
+    margin-right: 3px;
 }
 #t-shirt_color>button>img{
     width: 100%;
@@ -93,6 +93,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
 }
 #Sp_product-right>div:nth-child(5)>div>button{
     width: 19%;
