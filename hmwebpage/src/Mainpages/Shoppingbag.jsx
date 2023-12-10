@@ -1,25 +1,84 @@
-import './Shoppingbag.css'
+import React, { useContext, useEffect, useState } from 'react'
+import { AuthContext } from '../Context/AuthContext';
+import toast from 'react-hot-toast';
+import api from '../Helpers/AxiosConfig';
 import Header from '../Components/Header';
+import './Shoppingbag.css'
 import Footer from '../Components/Footer';
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { BsChevronDown, BsBox } from "react-icons/bs";
 import { MdArrowForwardIos } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 import Heart_icon from '../Components/Heart_Icon';
-function Shoppingbag() {
+
+const Shoppingbag = () => {
+    const [cartProducts, setCartProducts] = useState([]);
+    const { state } = useContext(AuthContext);
     const router = useNavigate();
-    function GoToSingleproduct() {
-        router("/cart/Productpage.1021953016")
+
+    async function getYourCartProductsid() {
+        // assignment - complete this bloack
+        const id = state.user.id;
+        console.log("this is your id...........", id);
+        try {
+            const { data } = await api.get(`/user/your-cart?id=${id}`)
+            if (data.success) {
+                setCartProducts(data.usecart)
+            }
+        } catch (error) {
+            console.log(error)
+        }
     }
-    function backToHomepage() {
-        router('/')
+
+    async function deleteProduct(productId) {
+        try {
+            const response = await api.post('/user/delete-cart', { productId, userId: state?.user?.id })
+            if (response.data.success) {
+                toast.success(response.data.message)
+                setCartProducts(response.data.products)
+            }
+        } catch (error) {
+            console.log(error)
+        }
     }
+
+    useEffect(() => {
+        if (state?.user && state?.user?.id === undefined) {
+            toast.error("Please login to access your cart products, redirecting yout login page in 3 sec.")
+            setTimeout(() => {
+                router("/login")
+            }, 3000)
+        } else {
+            if (state?.user?.id) {
+                getYourCartProductsid();
+            }
+
+        }
+    }, [state])
+
+    console.log(cartProducts)
+
+    const [product, setProduct] = useState([]);
+    useEffect(() => {
+        const getAllProducts = async () => {
+            try {
+                const { data } = await api.get('/products/get-all-products')
+                if (data.success) {
+                    setProduct(data.product)
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getAllProducts();
+    }, [])
+
     return (
         <div id='Shoppingbag'>
             <Header />
             <div id='Shoppingbag-body'>
                 <div id='Shoppingbag_link'>
-                    <button onClick={backToHomepage}>HM.com <span style={{ marginRight: "5px" }}>/</span></button>
+                    <button onClick={()=>router('/')}>HM.com <span style={{ marginRight: "5px" }}>/</span></button>
                     <button>Shopping bag</button>
                 </div>
                 <div id="extra-info">
@@ -28,230 +87,54 @@ function Shoppingbag() {
                     <p>Download the H&M App</p>
                 </div>
                 <h1>Shopping bag</h1>
+
+
+
                 <div id='Shopbag_product'>
                     <div id='Shopbag_product-left' >
-                        <div>
+                        {cartProducts.map((pro) => (
                             <div>
-                                <img src="https://lp2.hm.com/hmgoepprod?set=source[/46/a3/46a3eea2d9c78e05cb3370b745182e9f576e2bc0.jpg],origin[dam],category[men_tshirtstanks_longsleeve],type[DESCRIPTIVESTILLLIFE],res[q],hmver[2]&call=url[file:/product/miniature]" alt="" />
-                            </div>
-                            <div id='product_details'>
                                 <div>
-                                    <h4>Relaxed Fit Jersey top</h4>
-                                    <RiDeleteBin5Line style={{ fontSize: "24px" }} />
+                                    <img src={pro.image[0]} alt="" />
                                 </div>
-                                <p>Rs. 1,499.00</p>
-                                <p>Member Price Rs. 1,279.00</p>
-                                <div>
+                                <div id='product_details'>
+                                    <div>
+                                        <h4>{pro.name}</h4>
+                                        <RiDeleteBin5Line style={{ fontSize: "24px" }} onClick={() => deleteProduct(pro._id)} />
+                                    </div>
+                                    <p>{pro.price}</p>
+                                    <p></p>
                                     <div>
                                         <div>
-                                            <p>Art.no.</p>
-                                            <p>1021953016</p>
+                                            <div>
+                                                <p>Size:</p>
+                                                <p>XXL</p>
+                                            </div>
+                                            <div>
+                                                <p>Total:</p>
+                                                <p>{pro.price}</p>
+                                            </div>
                                         </div>
                                         <div>
-                                            <p>Colour:</p>
-                                            <p>Brown/Cream striped</p>
+                                            <div>
+                                                <p>Art.no.</p>
+                                                <p>{pro._id}</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div>
-                                        <div>
-                                            <p>Size:</p>
-                                            <p>XXL</p>
+                                        <div className='select_item-heart'>
+                                            <Heart_icon />
                                         </div>
                                         <div>
-                                            <p>Total:</p>
-                                            <p>Rs.1,499.00</p>
+                                            <p>1</p>
+                                            <BsChevronDown />
                                         </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className='select_item-heart'>
-                                        <Heart_icon />
-                                    </div>
-                                    <div>
-                                        <p>1</p>
-                                        <BsChevronDown />
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <div>
-                                <img src="https://lp2.hm.com/hmgoepprod?set=source[/6b/73/6b73497480377f7a1929dbff62a1b38ea62351df.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[q],hmver[2]&call=url[file:/product/miniature]" alt="" />
-                            </div>
-                            <div id='product_details'>
-                                <div>
-                                    <h4>Bangle</h4>
-                                    <RiDeleteBin5Line style={{ fontSize: "24px" }} />
-                                </div>
-                                <p>Rs.799.00</p>
-                                <p></p>
-                                <div>
-                                    <div>
-                                        <div>
-                                            <p>Art.no.</p>
-                                            <p>1196050001</p>
-                                        </div>
-                                        <div>
-                                            <p>Colour:</p>
-                                            <p>Silver-coloured</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div>
-                                            <p>Size:</p>
-                                            <p>NOSIZE</p>
-                                        </div>
-                                        <div>
-                                            <p>Total:</p>
-                                            <p>Rs.799.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className='select_item-heart'>
-                                        <Heart_icon />
-                                    </div>
-                                    <div>
-                                        <p>1</p>
-                                        <BsChevronDown />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <img src="https://lp2.hm.com/hmgoepprod?set=source[/de/6a/de6af2fa322c2305e4224c63a2fb59014ca45890.jpg],origin[dam],category[men_accessories_jewellery],type[DESCRIPTIVESTILLLIFE],res[q],hmver[2]&call=url[file:/product/miniature]" alt="" />
-                            </div>
-                            <div id='product_details'>
-                                <div>
-                                    <h4>4-pack bracelets</h4>
-                                    <RiDeleteBin5Line style={{ fontSize: "24px" }} />
-                                </div>
-                                <p>Rs.699.00</p>
-                                <p></p>
-                                <div>
-                                    <div>
-                                        <div>
-                                            <p>Art.no.</p>
-                                            <p>1157724004</p>
-                                        </div>
-                                        <div>
-                                            <p>Colour:</p>
-                                            <p>Silver-coloured</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div>
-                                            <p>Size:</p>
-                                            <p>NOSIZE</p>
-                                        </div>
-                                        <div>
-                                            <p>Total:</p>
-                                            <p>Rs.699.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className='select_item-heart'>
-                                        <Heart_icon />
-                                    </div>
-                                    <div>
-                                        <p>1</p>
-                                        <BsChevronDown />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <img src="https://lp2.hm.com/hmgoepprod?set=source[/dd/0b/dd0bb743845796d99689a4c3a804434437e06c7f.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[q],hmver[2]&call=url[file:/product/miniature]" alt="" />
-                            </div>
-                            <div id='product_details'>
-                                <div>
-                                    <h4>Signet ring</h4>
-                                    <RiDeleteBin5Line style={{ fontSize: "24px" }} />
-                                </div>
-                                <p>Rs. 799.00</p>
-                                <p></p>
-                                <div>
-                                    <div>
-                                        <div>
-                                            <p>Art.no.</p>
-                                            <p>1195227001</p>
-                                        </div>
-                                        <div>
-                                            <p>Colour:</p>
-                                            <p>Brown/Cream striped</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div>
-                                            <p>Size:</p>
-                                            <p>L</p>
-                                        </div>
-                                        <div>
-                                            <p>Total:</p>
-                                            <p>Rs.799.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className='select_item-heart'>
-                                        <Heart_icon />
-                                    </div>
-                                    <div>
-                                        <p>1</p>
-                                        <BsChevronDown />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <img src="https://lp2.hm.com/hmgoepprod?set=source[/3b/f7/3bf7ccb570540ba78d37cd215fa97853c91a9a0f.jpg],origin[dam],category[men_accessories_jewellery_bracelets],type[DESCRIPTIVESTILLLIFE],res[q],hmver[2]&call=url[file:/product/miniature]" alt="" />
-                            </div>
-                            <div id='product_details'>
-                                <div>
-                                    <h4>3-pack bracelets</h4>
-                                    <RiDeleteBin5Line style={{ fontSize: "24px" }} />
-                                </div>
-                                <p>Rs.799.00</p>
-                                <p>Member Price Rs. 1,279.00</p>
-                                <div>
-                                    <div>
-                                        <div>
-                                            <p>Art.no.</p>
-                                            <p>0999884011</p>
-                                        </div>
-                                        <div>
-                                            <p>Colour:</p>
-                                            <p>Black/Silver-coloured</p>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div>
-                                            <p>Size:</p>
-                                            <p>NOSIZE</p>
-                                        </div>
-                                        <div>
-                                            <p>Total:</p>
-                                            <p>Rs.799.00</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className='select_item-heart'>
-                                        <Heart_icon />
-                                    </div>
-                                    <div>
-                                        <p>1</p>
-                                        <BsChevronDown />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
                     </div>
-
 
                     <div id='Shopbag_product-right'>
                         <div>
@@ -296,62 +179,23 @@ function Shoppingbag() {
                 <div id="shopbag_suggest">
                     <h3>You may also like</h3>
                     <div>
-                        <div>
-                            <img src="https://lp2.hm.com/hmgoepprod?set=source[/01/bb/01bbaf835957666cffee162d6ef257b6913f77ce.jpg],origin[dam],category[men_accessories_jewellery],type[DESCRIPTIVESTILLLIFE],res[z],hmver[2]&call=url[file:/product/main]" alt="1" />
-                            <div className='select_item-heart'>
-                                <Heart_icon />
+                        {product.slice(0,5).map((pro) => (
+                            <div onClick={()=>(router(`/singleproduct/${pro._id}`))}>
+                                <img src={pro.image[0]} alt="" />
+                                <div className='select_item-heart'>
+                                    <Heart_icon />
+                                </div>
+                                <p>4-pack bracelets</p>
+                                <p>{pro.price}</p>
                             </div>
-                            <p>4-pack bracelets</p>
-                            <p>Rs.699.00</p>
-                            <p style={{ marginTop: "10px" }}>Member price Rs.599.00</p>
-                        </div>
-                        <button onClick={GoToSingleproduct}>
-                            <img src="https://lp2.hm.com/hmgoepprod?set=source[/b2/9d/b29dea35185ac2a9caae0915dc60286fe6a8cfa9.jpg],origin[dam],category[men_tshirtstanks_longsleeve],type[DESCRIPTIVESTILLLIFE],res[z],hmver[2]&call=url[file:/product/main]" alt="2" />
-                            <div className='select_item-heart'>
-                                <Heart_icon />
-                            </div>
-                            <p>Relaxed Fit Jersey top</p>
-                            <p>Rs.1,499.00</p>
-                        </button>
-                        <div>
-                            <img src="https://lp2.hm.com/hmgoepprod?set=source[/f4/66/f4665deecea65f2c98e507f8442d2f530d703b90.jpg],origin[dam],category[men_tshirtstanks_longsleeve],type[DESCRIPTIVESTILLLIFE],res[z],hmver[2]&call=url[file:/product/main]" alt="3" />
-                            <div className='select_item-heart'>
-                                <Heart_icon />
-                            </div>
-                            <p>Relaxed Fit Jersey top</p>
-                            <p>Rs.1,499.00</p>
-                        </div>
-                        <div>
-                            <img src="https://lp2.hm.com/hmgoepprod?set=source[/6e/34/6e34b68ebc85708bee5f71444f237b7b52b9dbd6.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[z],hmver[2]&call=url[file:/product/main]" alt="4" />
-                            <div className='select_item-heart'>
-                                <Heart_icon />
-                            </div>
-                            <p>2-pack necklaces</p>
-                            <p>Rs.799.00</p>
-                            <p style={{ marginTop: "10px" }}>Member price Rs.679.00</p>
-                        </div>
-                        <div>
-                            <img src="https://lp2.hm.com/hmgoepprod?set=source[/aa/8c/aa8c5f39248251a29e9965075e04670746e8a598.jpg],origin[dam],category[men_accessories_jewellery],type[DESCRIPTIVESTILLLIFE],res[z],hmver[2]&call=url[file:/product/main]" alt="5" />
-                            <div className='select_item-heart'>
-                                <Heart_icon />
-                            </div>
-                            <p>4-pack bracelets</p>
-                            <p>Rs.699.00</p>
-                            <p style={{ marginTop: "10px", fontSize: "10px" }}>New Arrival</p>
-                        </div>
-                        <div>
-                            <img src="https://lp2.hm.com/hmgoepprod?set=source[/ba/75/ba75709f8b00ed2fb7990d1eac67f7fd977bb07d.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[z],hmver[2]&call=url[file:/product/main]" alt="6" />
-                            <div className='select_item-heart'>
-                                <Heart_icon />
-                            </div>
-                            <p>Loose Fit T-shirt</p>
-                            <p>Rs.799.00</p>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>
-            <Footer />
+            <Footer/>
         </div>
     )
+
 }
-export default Shoppingbag;
+
+export default Shoppingbag

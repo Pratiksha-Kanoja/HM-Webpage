@@ -7,7 +7,7 @@ import Singleproduct from './Mainpages/Singleproduct';
 import Product from './Mainpages/Product';
 import Login from './Components/Login';
 import Register from './Components/Register';
-import Practice from './Mainpages/Practice';
+// import Practice from './Mainpages/Practice';
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
         <Route exact path='/cart' element={<Shoppingbag />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/register' element={<Register />} />
-        <Route exact path='/practice' element={<Practice />} />
+        {/* <Route exact path='/practice' element={<Practice />} /> */}
         
         
         {/* <Route path='/' element={<Extrahome />} /> */}
