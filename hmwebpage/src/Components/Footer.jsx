@@ -7,14 +7,8 @@ function Footer(){
         <div id='footer'>
             <div>
                 <div id='foot-top'>
-                    <div>
-                        <div>SHOP</div>
-                        <div>CORPORATE INFO</div>
-                        <div>HELP</div>
-                        <div></div>
-                    </div>
-                    <div>
                         <div>
+                            <div>SHOP</div>
                             <p>Ladies</p>
                             <p>Men</p>
                             <p>Baby</p>
@@ -23,6 +17,7 @@ function Footer(){
                             <p>Sport</p>
                         </div>
                         <div>
+                            <div>CORPORATE INFO</div>
                             <p>Career at H&M</p>
                             <p>About H&M group</p>
                             <p>Sustainability H&M Group</p>
@@ -31,6 +26,7 @@ function Footer(){
                             <p>Corporate governance</p>
                         </div>
                         <div>
+                            <div>HELP</div>
                             <p>Customer Service</p>
                             <p>My H&M</p>
                             <p>Find a store</p>
@@ -46,7 +42,6 @@ function Footer(){
                                 <div style={{marginLeft:"20px",fontSize:"20px"}}><BsArrowRight/></div>
                             </button>
                         </div>
-                    </div>
                 </div>
 
                 <div id='foot-icons'>

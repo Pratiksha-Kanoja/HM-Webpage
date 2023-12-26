@@ -9,7 +9,7 @@ function Homepage() {
     return (
         <div id="Homepage_Container">
             <Header/> {/*this is header Component which we access here */}
-            <div id="extra-info">
+            <div id="HM_extra-info">
                 <p>Members get free shipping above Rs.1999</p>
                 <p>Free & flexible 15 days return</p>
                 <p>Download the H&M App</p>
@@ -26,7 +26,7 @@ function Homepage() {
                     <button>Shop now</button>
                 </div>
             </div>
-            <div id='second_img'>
+            <div id='HM_second_img'>
                 <div>
                     <p>A/W2023</p>
                     <button>Shop now</button>
@@ -48,7 +48,7 @@ function Homepage() {
                     <button>Kids & Baby</button>
                 </div>
             </div>
-            <div id="popular_categories">
+            <div id="HM_popular_categories">
                 <div>
                     <h3>Popular categories</h3>
                     <div id="pc-main">
@@ -108,7 +108,7 @@ function Homepage() {
 
             </div>
 
-            <div id='third_img'>
+            <div id='HM-third_img'>
                 <div>
                     <p>Rs.999.00</p>
                     <p>Cotton corduroy shirt <MdKeyboardArrowRight /> </p>
